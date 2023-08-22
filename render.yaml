@@ -1,7 +1,11 @@
+version: 1
 build:
   steps:
-    - name: Build
-      script: |
-        g++ -o bank_app BMS.cpp
+    - name: Build C++ Application
+      script:
+        - g++ -o bank_app BMS.cpp
   docker:
-    image: debian:latest # Choose a suitable base image
+    image: debian:latest
+
+start:
+  command: ./bank_app
